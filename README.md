@@ -1,7 +1,7 @@
 # seminar2_sopt
 sopt 2차 세미나
 
-### [Server 배경지식]()
+### [Server 배경지식](/mdFiles/read1.md)
 - server & client
 - HTTP
 - MVC
