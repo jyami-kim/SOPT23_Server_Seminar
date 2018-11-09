@@ -1,7 +1,7 @@
 # seminar2_sopt
 sopt 2차 세미나
 
-### [Server 배경지식](/mdFiles/read1.md)
+### [Server 배경지식](mdFiles/read1.md)
 - server & client
 - HTTP
 - MVC
@@ -9,7 +9,7 @@ sopt 2차 세미나
 - Web Server
 - Servlet
 
-### [Spring Presentation Layer]()
+### [Spring Presentation Layer](mdFiles/read2.md)
 - @RestController
 - @GetMapping
 - @RequestMapping

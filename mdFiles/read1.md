@@ -2,45 +2,43 @@
 
 ## server & client
 
-Client : 서비스 요청자, 사용자, 다른 server 등
+- Client : 서비스 요청자, 사용자, 다른 server 등
 
-Server : 서비스 제공자
+- Server : 서비스 제공자
 
-Server - Client Model : 작업을 분리해주는 분산 애플리케이션 구조, 네트워크 아키텍쳐
+- Server - Client Model : 작업을 분리해주는 분산 애플리케이션 구조, 네트워크 아키텍쳐
 
-Client가 사용자 입력에 초점을 맞춘 반면, Server는 공유 데이터의 처리 및 저장, 웹 페이지 지원, 또는 네트워크 활동 관리 등의 역할을 수행한다
+- Client가 사용자 입력에 초점을 맞춘 반면, Server는 공유 데이터의 처리 및 저장, 웹 페이지 지원, 또는 네트워크 활동 관리 등의 역할을 수행한다
 
 ## HTTP
 ##### HTTP란?
 Hyper Text Transfer Protocol : 인터넷 상에서 정보를 주고받을 수 있는 프로토콜
 
-TCP, UDP, IP 프로토콜 사용
-80번 포트 사용 (HTTPS = 443 포트)  
-연결 상태를 유지하지 않는 프로토콜이다  
-서버에 접속해 클라이언트 요청에 대한 응답을 전송한 후 연결 종료, 전산 자원이 적게 들지만, 클라이언트 구분이 힘들다. 요청이 많아질 경우 문제가 발생한다. Cookie, Session, Token등을 사용해 단점 해소  
-클라이언트와 서버 사이에 이루어지는 요청(Request)/ 응답(Response) 프로토콜이다.  
+- TCP, UDP, IP 프로토콜 사용
+- 80번 포트 사용 (HTTPS = 443 포트)  
+- 연결 상태를 유지하지 않는 프로토콜이다  
+- 서버에 접속해 클라이언트 요청에 대한 응답을 전송한 후 연결 종료, 전산 자원이 적게 들지만, 클라이언트 구분이 힘들다. 요청이 많아질 경우 문제가 발생한다. Cookie, Session, Token등을 사용해 단점 해소  
+- 클라이언트와 서버 사이에 이루어지는 요청(Request)/ 응답(Response) 프로토콜이다.  
 
 ##### HTTP 메세지의 구성
 
-서버와 클라이언트 간 데이터 교환 방식
+- 서버와 클라이언트 간 데이터 교환 방식
+  +  Request: 클라이언트에 의해 전달되어 서버의 동작을 일으킨다. 요청 메시지   
+  +  Response : Request에 대한 서버의 회신이다. 응답 메시지  
 
-Request: 클라이언트에 의해 전달되어 서버의 동작을 일으킨다. 요청 메시지 
-
-Response : Request에 대한 서버의 회신이다. 응답 메시지
-
-포함되어야 하는 것 : HTTP method, Request Target(요청 대상, URL, 도메인), HTTP 버전정보, 상태코드
+- 포함되어야 하는 것 : HTTP method, Request Target(요청 대상, URL, 도메인), HTTP 버전정보, 상태코드
 
 <pre><code>Requests : POST/HTTP/1.1 (method / HTTP 버전정보)
 Responses : HTTP/1.1 403 Forbidden (method / HTTP 버전정보 / 상태코드)</code></pre>
 
-Header
+- Header
 
 <pre><code>Host, User-Agent, Accept, Accept-Language, Accept-Encoding (Request headers)
 Connection, Upgrade-Insecure-Requests (General headers)
 Content-Type, Content-Length (Entity headers)</code></pre>
 
-Body : 전송하고 전송 받은 데이터 (화면 표시 및 서버에 데이터 저장 등)  
-POST 요청인 경우, 리소스를 갱신하기 위한 목적으로 데이터를 전송한다.
++ Body : 전송하고 전송 받은 데이터 (화면 표시 및 서버에 데이터 저장 등)  
++ POST 요청인 경우, 리소스를 갱신하기 위한 목적으로 데이터를 전송한다.
 
 ##### HTTP Method
 <pre>
@@ -80,11 +78,11 @@ Model View Controller Architecture
 
 사용자가 Controller를 조작하면 Controller는 Model을 통해서 데이터를 가져오고 그정보를 바탕으로 시작적인 표현을 담당하는 View를 제어해서 사용자에게 전달한다.
 
-Model : 정보(데이터), 데이터 베이스
++  Model : 정보(데이터), 데이터 베이스
 
-View : 사용자 인터페이스, 프론트엔드
++ View : 사용자 인터페이스, 프론트엔드
 
-Controller : 데이터와 비즈니스 로직사이의 상호작용 관리
++ Controller : 데이터와 비즈니스 로직사이의 상호작용 관리
 
 사용자가 접근한 URL에 따라 요청에 맞는 데이터를 Model로 처리를 위임하고, 데이터를 View에 반영해 사용자에게 알려준다.
 
@@ -101,7 +99,52 @@ Controller : 데이터와 비즈니스 로직사이의 상호작용 관리
 
 ## Servlet
 
+- java를 사용해 웹 페이지를 동적으로 생성하는 서버 프로그램
+- 웹 서버의 성능을 향상하기 위해 사용되는 자바 클래스의 일종
+- JSP vs Servlet  
+  **jsp** : html에 java코드 포함 VS **servlet** : java코드에 html포함
+- node.js vs servlet  
+  **node** : single thread  VS  **servlet** : multi thread
+- java로 구현되므로 다양한 플랫폼에서 동작
+
+##### Web container (Servlet Container)
+
+웹 클라이언트로부터 http 요청이 전달되면 해당 http 요청을 해석하여 적절한 서블릿의 service 메서드(Get, Post)를 ServletRequest, ServletResponse 매개 변수와 함께 호출  
+
+init > service (get, post) > destroy  
+이떄 service 단계에서 request와 response가 호출된다.
+
+- 웹서버 컴포넌트중 하나로 java servlet과 상호작용한다.
+- servlet의 생명 주기 관리, URL과 특정 servlet을 Mapping하여 URL 요청이 올바른 접근 권한을 갖게 한다.
+- Servlet, JSP, Server Side Code가 포함된 다른 타입의 파일들에 대한 요청을 다른다.
+- servlet객체를 생성하고, servlet을 로드, 언로드하여 요청과 응답 객체를 생성, 관리하고 다른 servlet 관리 작업을 수행한다.
+
+대표적인 Servlet Container가 Tomcat!
+
+> Servlet container와 WAS가 비슷한 개념인 것 같다.
+
 ## WAS
+
+WAS : Web Applicaion Server
+
+- 인터넷 상에서 HTTP를 통해 사용자 컴퓨터나 장치에 애플리케이션을 수행해 주는 미들웨어
+- 동적 서버 컨텐츠를 수행하는 것, 주로 DB서버와 같이 수행된다.
+- 대부분 자바 기반이다.
+- 일반적으로 Web Server의 기능을 포함하고 있어, Web Server가 없어도 서비스가 가능하다.
+- 여러개의 트랜잭션을 관리한다.
+- Tomcat 
+
+> Spring은 WAS가 있어야해서 Tomcat을 깔지만, Spring boot는 WAS, Tomcat 자체를 갖고있어서 그냥 실행가능
+
+##### WAS의 생명 주기
+1. Web Server로 부터 요청이 들어오면 제일 먼저 컨테이너가 이를 알맞게 처리한다.
+2. 컨테이너는 web.xml(배포서술자)를 참조하여 해당 servlet에 대한 thread를 생성하고, httpservletRequest와 httpServletResponse 객체를 생성하여 전달한다.
+3. 컨테이너가 servlet을 호출한다. (service())
+4. 호출된 servlet의 작업을 담당하는 스레드는 request에 따라 doPost(), doGet()을 호출한다.
+5. 호출된 doPost(), doGet() 메소드는 생성된 동적 페이지를 Response 객체에 실어서 컨테이너에 전달한다.
+6. 컨테이너는 전달받은 Response 객체를 HTTPResponse 형태로 전환하여 웹서버에 전달하고 생성된 스레드 종료, httpServletRequest, httpServletResponse 객체를 소멸시킨다.
 
 ## Web Server
 
+HTTP를 통해 웹 브라우저에서 용청하는 HTML, CSS, Image 파일 등 정적 컨텐츠를 전송해주는 서버이다.  
+Nginx

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 public class PostController {
     @PostMapping("") // url을  /로 설정  즉, PostUser를 실행하려면 /post/  를 하면 된다!
     public String postUser(@RequestBody final User user){
-        return user.getName();
+        return "name: " + user.getName() + "\npart: " + user.getPart();
     }
-
 }
