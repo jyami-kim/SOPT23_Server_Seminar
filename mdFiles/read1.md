@@ -11,7 +11,7 @@
 - Client가 사용자 입력에 초점을 맞춘 반면, Server는 공유 데이터의 처리 및 저장, 웹 페이지 지원, 또는 네트워크 활동 관리 등의 역할을 수행한다
 
 ## HTTP
-##### HTTP란?
+#### HTTP란?
 Hyper Text Transfer Protocol : 인터넷 상에서 정보를 주고받을 수 있는 프로토콜
 
 - TCP, UDP, IP 프로토콜 사용
@@ -20,7 +20,7 @@ Hyper Text Transfer Protocol : 인터넷 상에서 정보를 주고받을 수 �
 - 서버에 접속해 클라이언트 요청에 대한 응답을 전송한 후 연결 종료, 전산 자원이 적게 들지만, 클라이언트 구분이 힘들다. 요청이 많아질 경우 문제가 발생한다. Cookie, Session, Token등을 사용해 단점 해소  
 - 클라이언트와 서버 사이에 이루어지는 요청(Request)/ 응답(Response) 프로토콜이다.  
 
-##### HTTP 메세지의 구성
+#### HTTP 메세지의 구성
 
 - 서버와 클라이언트 간 데이터 교환 방식
   +  Request: 클라이언트에 의해 전달되어 서버의 동작을 일으킨다. 요청 메시지   
@@ -40,7 +40,7 @@ Content-Type, Content-Length (Entity headers)</code></pre>
 + Body : 전송하고 전송 받은 데이터 (화면 표시 및 서버에 데이터 저장 등)  
 + POST 요청인 경우, 리소스를 갱신하기 위한 목적으로 데이터를 전송한다.
 
-##### HTTP Method
+#### HTTP Method
 <pre>
 GET - 조회 - Read
 
@@ -50,7 +50,7 @@ PUT - 수정 - Update
 
 DELETE - 삭제 - Delete</pre>
 
-##### HTTP Status Code
+#### HTTP Status Code
 
 HTTP 응답(response) 상태 코드
 
@@ -86,7 +86,9 @@ Model View Controller Architecture
 
 사용자가 접근한 URL에 따라 요청에 맞는 데이터를 Model로 처리를 위임하고, 데이터를 View에 반영해 사용자에게 알려준다.
 
-##### Spring MVC
+#### Spring MVC
+
+![image](https://user-images.githubusercontent.com/26458200/48548301-f3458180-e90f-11e8-8025-eb0c70dc0098.png)
 
 1. 클라이언트 요청에 대해 **DispatcherServlet**에 최초 진입한다.
 2. **DispatcherServlet**은 Spring Bean Definition에 설정되어있는 **Handler Mapping** 정보를 참조해 요청을 처리하기 위한 **Controller**를 찾는다.
@@ -97,7 +99,7 @@ Model View Controller Architecture
 6. **Dispatcherservlet**은 **ViewResolver**를 통하여 전달된 View에게 **ModelAndView**를 전달하여 마지막으로 클라이언트에게 원하는 UI를 제공할 수 있도록한다.
 7. 마지막으로 클라이언트에게 UI를 제공할 책임은 View 클래스가 담당하게 된다.
 
-## Servlet
+## <a id ="servlet"> Servlet</a>
 
 - java를 사용해 웹 페이지를 동적으로 생성하는 서버 프로그램
 - 웹 서버의 성능을 향상하기 위해 사용되는 자바 클래스의 일종
@@ -107,7 +109,7 @@ Model View Controller Architecture
   **node** : single thread  VS  **servlet** : multi thread
 - java로 구현되므로 다양한 플랫폼에서 동작
 
-##### Web container (Servlet Container)
+#### Web container (Servlet Container)
 
 웹 클라이언트로부터 http 요청이 전달되면 해당 http 요청을 해석하여 적절한 서블릿의 service 메서드(Get, Post)를 ServletRequest, ServletResponse 매개 변수와 함께 호출  
 
@@ -136,7 +138,10 @@ WAS : Web Applicaion Server
 
 > Spring은 WAS가 있어야해서 Tomcat을 깔지만, Spring boot는 WAS, Tomcat 자체를 갖고있어서 그냥 실행가능
 
-##### WAS의 생명 주기
+#### WAS의 생명 주기
+
+![image](https://user-images.githubusercontent.com/26458200/48548374-2425b680-e910-11e8-81c1-21d984dcc05a.png)
+
 1. Web Server로 부터 요청이 들어오면 제일 먼저 컨테이너가 이를 알맞게 처리한다.
 2. 컨테이너는 web.xml(배포서술자)를 참조하여 해당 servlet에 대한 thread를 생성하고, httpservletRequest와 httpServletResponse 객체를 생성하여 전달한다.
 3. 컨테이너가 servlet을 호출한다. (service())

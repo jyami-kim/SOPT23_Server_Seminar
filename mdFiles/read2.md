@@ -11,7 +11,7 @@ contoller에는 항상 @RestController annotation을 붙여줘야한다. (class 
 > RestController 보는법 : ctrl+@RestController click 
 RestController interface를 확인 할 수 있다. 
 
-##### RestController 내부
+#### RestController 내부
 - @Controller: 템플릿을 이용해서 HTML 페이지를 렌더링하고 표시해준다.
 - @ResponseBody : 반환값을 JSON으로 변환해 준다 > API 통신 방식이 JSON이기 때문
 
@@ -26,7 +26,7 @@ RestController 클래스 안의 각각의 메소드를 URL과 매핑한다. (액
 > 요청 타입을 Get으로 설정하고, GetMapping("")의 ()안에 있는 요청을 클라이언트에 보낸다.  
 이때 해당하는 uri를  ""안에 넣는다. (URL Mapping)
 
-##### URL Mapping
+#### URL Mapping
 
     @GetMapping("")             >127.0.0.1:8080(domain)
     @GetMapping("1")            >127.0.0.1:8080(domain)/1
@@ -89,7 +89,7 @@ require = false : {name}자리에 path var을 설정하지 않아도 method가 m
 - value : queryString의 key값 (queryString의 value값은 param으로 받아온다.)
 - defaultValue = queryString의 값이 없을 경우의 기본 값
 
-##### 여러개의 QueryString
+#### 여러개의 QueryString
     @GetMapping("/info")
     public String getPart2(
             @RequestParam(value = "name")final String name,
@@ -106,7 +106,7 @@ require = false : {name}자리에 path var을 설정하지 않아도 method가 m
 - 여러 개의 QueryString을 받을 수 있다.
 - 요청 시 QueryString key 값 사이를 &로 이어주면 된다.
     
-##### QueryString 배열
+#### QueryString 배열
     @GetMapping
     public int number(@RequestParam(value = "num") final int[] num){
         int sum = 0;
@@ -144,7 +144,7 @@ require = false : {name}자리에 path var을 설정하지 않아도 method가 m
 - Post 메소드 전용 Controller Annotation
 - 리소스를 생성하는 요청에 사용한다(서버에 정보 저장: Create)
 
-##### RequestBody
+#### RequestBody
 - parameter로 객체를 받는 Annotation
 - HTTP Message body를 자바 객체로 변환 (Mapping) > setMember와 같은 역할인듯!
 - Spring MVC 내의 HttpMessageConverter가 변환을 처리해 준다.
