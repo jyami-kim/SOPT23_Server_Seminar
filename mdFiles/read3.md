@@ -14,18 +14,18 @@
 ## Spring boot app 배포
 
 1. 내장 Tomcat이용
-   1-1. Jar로 build  
+   1-1. Jar로 build   
    1-2. Maven 명령어 이용  
 
-2. 다른 WAS(Tomcat)이용
+2. 다른 WAS(Tomcat)이용  
    2-1. War로 build  
 
 #### - war로 build
 
 pom.xml 파일  
 application의 각종 속성들이 적혀있다.  
-<artifactId> <version> 을 조합하여 build 파일을 생성한다.  
-<packaging> : war 파일로 build파일 저장  
+```<artifactId> <version>``` 을 조합하여 build 파일을 생성한다.  
+```<packaging>``` : war 파일로 build파일 저장  
 
 첫 build : build > build artifacts > title.war  
 이후 build : build > build_project
@@ -42,7 +42,7 @@ cmd에서 프로젝트 폴더 최 상단으로 이동 (shift + 우클릭 > power
 
 #### - jar로 build
 
-<packaging> : jar 파일로 build파일 저장  
+```<packaging>``` : jar 파일로 build파일 저장  
 cmd에서 프로젝트 폴더 최 상단으로 이동 후 maven 명령어 입력  
 <pre><code>mvn package</code></pre>
 build가 완료되고, 내프로젝트에 title.jar 파일이 생성되어있다.  
