@@ -9,10 +9,7 @@ public class firstController {
     public String hello(){
         return "hello world!";
     }
-//    @RequestMapping(method = RequestMethod.GET, value = "")
-//    public String hello2(){
-//        return "Nice to Meet you!";
-//    }
+
     @GetMapping("1")
     public String hello2(){
         return "hello world! (In mapping 1)";
