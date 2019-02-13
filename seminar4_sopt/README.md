@@ -21,7 +21,7 @@ sopt 4차 세미나
 - @Update
 - @Delete
 
-### [AWS EC2](mdFiles/read4.md)
+### [AWS RDS](mdFiles/read4.md)
 - AWS RDS
 - AWS RDS Instance 생성
 - AWS RDS Encoding

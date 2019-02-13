@@ -1,5 +1,5 @@
-# seminar2_sopt
-sopt 2차 세미나
+# seminar3_sopt
+sopt 3차 세미나
 
 ### [Spring](mdFiles/read1.md)
 - Spring Ioc
