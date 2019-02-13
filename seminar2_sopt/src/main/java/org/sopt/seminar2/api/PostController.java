@@ -4,6 +4,7 @@ package org.sopt.seminar2.api;
 import org.sopt.seminar2.model.User;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping("post") //request mapping은 get이 기본값
 //일단 method=get으로 설정하고, value="post"로 들어간다.

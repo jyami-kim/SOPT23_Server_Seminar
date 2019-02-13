@@ -6,7 +6,7 @@
     <groupId>org.sopt</groupId>
     <artifactId>seminar2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <name>seminar2</name>
     <description>2018 SOPT 23rd server part seminar</description>
