@@ -1,30 +1,24 @@
 # seminar2_sopt
 sopt 2차 세미나
 
-### [Spring](mdFiles/read1.md)
-- Spring Ioc
-- Spring DI
-- Spring Bean Life Cycle
+### [Server 배경지식](mdFiles/read1.md)
+- server & client
+- HTTP
+- MVC
+- WAS
+- Web Server
+- Servlet
 
-### [Lombok](mdFiles/read2.md)
-- @Data
-- @NoArgsConstructor
-- @AllArgsConstructor
-- @NonNull
-- @RequiredArgsConstructor
-- @Builder
-- @Value
-- @Slf4j
+### [Spring Presentation Layer](mdFiles/read2.md)
+- @RestController
+- @GetMapping
+- @RequestMapping
+- @PathVariable
+- @RequestParam
+- @PostMapping
+- @PutMapping
+- @DeleteMapping
 
-### [Spring Business Logic Layer](mdFiles/read3.md)
-- ResponseEntity
-- @Service
-- @Autowired
-
-### [AWS EC2](mdFiles/read4.md)
-- AWS & EC2 소개
-- AWS EC2 인스턴스 생성
-- Ubuntu 환경설정
-- FileZilla
-- Jar 배포
-
+### [Tomcat](mdFiles/read3.md)
+- Tomcat
+- Spring Boot App 배포
